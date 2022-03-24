@@ -27,7 +27,7 @@ const Pokedex = function () {
   }, []);
 
     return (
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center bg-cover bg-neutral-50 bg-pokedex'>
         <img className='w-1/6' src="https://1000marcas.net/wp-content/uploads/2020/01/Pokemon-Logo.png" alt="Pokemon Logo" />
         <div className='flex flex-wrap justify-center w-2/3 h-full py-6 bg-white'>
           {pokemonList.map((pokemon: PokemonDetail) => (
