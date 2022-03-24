@@ -50,8 +50,10 @@ function defineColor(type: string){
     return 'bg-indigo-300'
   } else if (type == 'fairy') {
     return 'bg-pink-400'
+  } else if (type == 'fighting') {
+    return 'bg-yellow-400'
   } else {
-    return 'bg-fuchsia-400'
+    return 'bg-fuchsia-700'
   }
 }
 
@@ -59,7 +61,7 @@ function createTag(type: string){
   return  <p className={ `${defineColor(type)} m-1 text-xs text-white rounded text-center w-2/3` }>{ capitalizeFirstLetter(type) }</p>
 }
 
-function capitalizeFirstLetter(string) {
+function capitalizeFirstLetter(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 export default Pokemon;

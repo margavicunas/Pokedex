@@ -41,7 +41,7 @@ const Pokedex = function () {
                     <Pokemon key={pokemon.id} pokemon={pokemon} />
                 ))}
             </div>
-            <button className="justify-center p-2 my-6 text-white rounded-md bg-cyan-500" 
+            <button className="justify-center p-2 my-6 text-white rounded-md bg-cyan-500"
                 onClick={() => getAllPokemons()}>
                 Load more Pokémon
             </button>
