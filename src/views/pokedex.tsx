@@ -27,17 +27,17 @@ const Pokedex = function () {
   }, []);
 
     return (
-      <div className='flex flex-col items-center bg-cover bg-neutral-50 bg-pokedex'>
+      <div className='flex flex-col items-center bg-neutral-50 bg-pokedex'>
         <img className='w-1/6' src="https://1000marcas.net/wp-content/uploads/2020/01/Pokemon-Logo.png" alt="Pokemon Logo" />
-        <div className='flex flex-wrap justify-center w-2/3 h-full py-6 bg-white'>
+        <div className='flex flex-wrap justify-center w-2/3 h-full pt-6 bg-white'>
           {pokemonList.map((pokemon: PokemonDetail) => (
             <Pokemon key={pokemon.id} pokemon={pokemon} />
           ))}
-        </div>
-        <button className="justify-center p-2 my-6 text-white rounded-md bg-cyan-500"
+        <button className="self-end justify-center w-1/4 p-2 my-10 text-white rounded-md bg-cyan-500"
           onClick={() => getAllPokemons()}>
           Load more Pokémon
         </button>
+        </div>
       </div>
     );
   };
