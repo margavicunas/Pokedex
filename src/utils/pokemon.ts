@@ -3,23 +3,23 @@ export function formatId(id: string){
     return finalId
 }
 
-export function defineColor(type: string){
+export function defineTagColor(type: string){
     if (type === 'fire') {
-      return 'bg-red-700'
+      return 'bg-orange-500'
     } else if (type === 'water') {
-      return 'bg-cyan-600'
+      return 'bg-sky-600'
     } else if (type === 'grass') {
-      return 'bg-lime-600'
+      return 'bg-lime-500'
     } else if (type === 'flying') {
-      return 'bg-violet-600'
+      return 'bg-type-flying'
     } else if (type == 'bug') {
-      return 'bg-emerald-700'
+      return 'bg-lime-600'
     } else if (type == 'normal') {
-      return 'bg-gray-500'
+      return 'bg-zinc-400'
     } else if (type == 'ground') {
-      return 'bg-yellow-900'
+      return 'bg-type-ground'
     } else if (type == 'poison') {
-      return 'bg-purple-700'
+      return 'bg-purple-400'
     } else if (type == 'ice') {
       return 'bg-sky-500'
     } else if (type == 'rock') {
@@ -31,10 +31,20 @@ export function defineColor(type: string){
     } else if (type == 'fairy') {
       return 'bg-pink-400'
     } else if (type == 'fighting') {
-      return 'bg-yellow-400'
+      return 'bg-orange-700'
+    } else if (type == 'psychic') {
+      return 'bg-pink-400'
     } else {
-      return 'bg-fuchsia-700'
+      return 'bg-stone-400'
     }
+}
+
+export function defineTextColor(type:string) {
+  if (['grass', 'ground', 'normal', 'flying', 'electric', 'fairy'].includes(type)) {
+    return 'text-black'
+  } else {
+    return 'text-white'
+  }
 }
 
 export function capitalizeFirstLetter(string: string) {
