@@ -7,7 +7,7 @@ module.exports = {
       }
     },
     backgroundImage: {
-      'pokedex': "url('https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png')",
+      'pokedex': "url('../src/assets/bg-image.png')",
     }
   },
   plugins: [],
