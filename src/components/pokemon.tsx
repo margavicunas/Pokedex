@@ -1,15 +1,16 @@
 import React from 'react';
-import { capitalizeFirstLetter, formatId, defineColor } from '../utils/pokemon';
+import { capitalizeFirstLetter, formatId, 
+         defineTagColor, defineTextColor } from '../utils/pokemon';
 import { PokemonDetail } from '../types/pokemon';
 
 const Pokemon = function ({ pokemon }: { pokemon: PokemonDetail }) {
   const name = pokemon.forms[0].name;
   return (
-    <div className='flex flex-col m-2 w-1/8 hover:animate-bounce-once'>
-      <img className='w-48 rounded-lg object-content bg-zinc-200' alt={`${ name }`} src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
+    <div className='flex flex-col mb-12 mr-4 w-1/8'>
+      <img className='w-64 rounded object-content bg-zinc-100' alt={`${ name }`} src={ `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.id.toString().padStart(3, '0')}.png`} />
       <div className="flex flex-col px-4">
-        <p className="font-semibold text-gray-400">{ formatId(pokemon?.id.toString()) }</p>
-        <p className="mt-2 mb-1 text-2xl font-semibold">{ capitalizeFirstLetter(name) }</p>
+        <p className="text-xs font-bold text-slate-400">{ formatId(pokemon?.id.toString()) }</p>
+        <p className="mt-2 mb-1 text-xl font-semibold">{ capitalizeFirstLetter(name) }</p>
         <div className='flex'>
           { pokemon?.types.map((slot) => (
               createTag(slot.type.name)
@@ -21,7 +22,7 @@ const Pokemon = function ({ pokemon }: { pokemon: PokemonDetail }) {
 };
 
 function createTag(type: string){
-  return  <p className={ `${defineColor(type)} mr-1 text-xs text-white rounded text-center w-[4rem]` }>{ capitalizeFirstLetter(type) }</p>
+  return  <p className={ `${defineTagColor(type)} mr-1 text-xs ${defineTextColor(type)} rounded text-center w-[6.5rem] py-[0.02rem]` }>{ capitalizeFirstLetter(type) }</p>
 }
 
 export default Pokemon;
