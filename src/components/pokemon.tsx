@@ -6,8 +6,8 @@ import { PokemonDetail } from '../types/pokemon';
 const Pokemon = function ({ pokemon }: { pokemon: PokemonDetail }) {
   const name = pokemon.forms[0].name;
   return (
-    <div className='flex flex-col mx-1 mb-12 w-1/8'>
-      <img className='w-64 rounded object-content bg-zinc-100' alt={`${ name }`} src={ `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.id.toString().padStart(3, '0')}.png`} />
+    <div className='flex flex-col mx-1 mb-12'>
+      <img className='w-[18rem] rounded object-content bg-zinc-100' alt={`${ name }`} src={ `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.id.toString().padStart(3, '0')}.png`} />
       <div className="flex flex-col px-4">
         <p className="text-xs font-bold text-slate-400">{ formatId(pokemon?.id.toString()) }</p>
         <p className="mt-2 mb-1 text-xl font-semibold">{ capitalizeFirstLetter(name) }</p>
