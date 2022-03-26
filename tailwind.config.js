@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'bounce-once': "bounce-up 0.5s ease-out"
+        'bounce-once': "bounce 0.5s ease-out"
       },
     },
     backgroundImage: {
