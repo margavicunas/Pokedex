@@ -4,6 +4,7 @@ import { PokemonDetail, PokemonName } from '../types/pokemon';
 
 const Pokedex = function () {
   const [pokemonList, setPokemonList] = useState<PokemonDetail[] | []>([]);
+  const [load, setLoad] = useState(false);
   const [loadPokemon, setLoadPokemon] = useState(
       "https://pokeapi.co/api/v2/pokemon?limit=12"
   );
@@ -36,7 +37,11 @@ const Pokedex = function () {
         </div>
         <div>
           <button className="p-2 my-10 text-white rounded-md bg-cyan-500"
-            onClick={() => getAllPokemons()}>
+            disabled={load}
+            onClick={()=> {
+              setLoad(true);
+              getAllPokemons().then(()=> setLoad(false));
+            }}>
             Load more Pokémon
           </button>
         </div>
