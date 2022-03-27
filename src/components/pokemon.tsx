@@ -22,7 +22,7 @@ const Pokemon = function ({ pokemon }: { pokemon: PokemonDetail }) {
 };
 
 function createTag(type: string){
-  return  <p className={ `${defineTagColor(type)} mr-1 text-xs ${defineTextColor(type)} rounded text-center w-[5rem] py-[0.02rem]` }>{ capitalizeFirstLetter(type) }</p>
+  return  <p key={type} className={ `${defineTagColor(type)} mr-1 text-xs ${defineTextColor(type)} rounded text-center w-[5rem] py-[0.02rem]` }>{ capitalizeFirstLetter(type) }</p>
 }
 
 export default Pokemon;
